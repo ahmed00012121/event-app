@@ -1,0 +1,280 @@
+/* =========================================================
+   � COMMON VARIABLES
+   ========================================================= */
+:root {
+  --header-height: 64px;
+  --nav-width: 280px;
+  --nav-bg: #1a1a1a;
+  --nav-text: #ffffff;
+  --nav-hover: rgba(255, 255, 255, 0.1);
+  --nav-active: #007bff;
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   �🎓 STUDENT NAVIGATION STYLES
+   ========================================================= */
+
+.nav-student {
+  background-color: var(--nav-bg);
+  position: fixed;
+  top: var(--header-height);
+  left: calc(-1 * var(--nav-width)); /* Hide by default */
+  height: calc(100vh - var(--header-height));
+  width: var(--nav-width);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  box-shadow: var(--nav-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.nav-student.open {
+  left: 0;
+}
+
+/* Logo Styles */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.logo-emoji {
+  font-size: 1.8rem;
+  margin-right: 0.75rem;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--nav-text);
+}
+
+/* Toggle Button */
+
+/* Menu toggle inside header */
+.menu-toggle {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 1003;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(255,255,255,0.03);
+  transform: scale(1.03);
+}
+
+.menu-toggle:hover {
+  background: var(--nav-active);
+  transform: scale(1.05);
+}
+
+.nav-student.open .menu-toggle {
+  left: calc(var(--nav-width) - 3.5rem);
+}
+
+/* Top application header */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: linear-gradient(90deg, rgba(26,26,26,1), rgba(30,30,30,1));
+  color: var(--nav-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem 0 1.25rem;
+  z-index: 1002;
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.app-header .app-title {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.app-header-right {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.app-header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none; /* so that clicks go to left/right areas */
+}
+
+.app-message {
+  font-size: 0.975rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+
+/* Ensure page content is pushed below the header */
+body {
+  padding-top: var(--header-height);
+}
+
+/* Make overlay not cover the header so header remains visible while nav overlay dims the page below */
+.nav-overlay {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  backdrop-filter: blur(2px);
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0.875rem 1.5rem;
+  margin: 0.25rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: var(--nav-hover);
+  transform: translateX(5px);
+}
+
+.nav-link.primary {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.logout {
+  color: #ff4d4d;
+}
+
+.nav-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+/* Dividers */
+.nav-divider {
+  height: 1px;
+  background: var(--nav-border);
+  margin: 0.75rem 1.5rem;
+}
+
+/* Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    --nav-width: 320px;
+  }
+
+  .nav-student {
+    width: 90%;
+    max-width: var(--nav-width);
+  }
+}
+
+/* =========================================================
+   🧭 ADMIN NAVIGATION STYLES
+   ========================================================= */
+
+.nav-admin {
+  background-color: #222;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-admin .nav-admin-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4dabf7;
+}
+
+.nav-admin .nav-admin-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-admin .nav-admin-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-admin .nav-admin-list li a:hover {
+  color: #4dabf7;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   📱 RESPONSIVE FIXES
+   ========================================================= */
+@media (max-width: 600px) {
+  .nav-admin .nav-admin-list {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-student .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

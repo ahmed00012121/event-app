@@ -1,0 +1,10 @@
+textblob
+nltk
+numpy
+pandas
+SpeechRecognition==3.10.0
+gTTS==2.3.2
+pygame==2.5.1
+PyAudio==0.2.13  # Required for microphone input
+motor==3.2.0     # MongoDB async driver
+python-dotenv==1.0.0

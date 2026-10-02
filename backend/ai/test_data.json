@@ -1,0 +1,26 @@
+{
+    "userId": "test123",
+    "pastEvents": [
+        {
+            "id": "past1",
+            "title": "Past Tech Conference",
+            "description": "A conference about web development and modern technologies"
+        }
+    ],
+    "upcomingEvents": [
+        {
+            "id": "upcoming1",
+            "title": "Future Tech Summit",
+            "description": "Summit focusing on web technologies and development practices",
+            "date": "2024-05-01T10:00:00+00:00",
+            "location": "Conference Center"
+        },
+        {
+            "id": "upcoming2",
+            "title": "Art Exhibition",
+            "description": "Contemporary art showcase",
+            "date": "2024-04-15T14:00:00+00:00",
+            "location": "Art Gallery"
+        }
+    ]
+}

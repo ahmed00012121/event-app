@@ -1,0 +1,147 @@
+/* ======================================================
+   QR Pass / Event Ticket - Full View Responsive
+   ====================================================== */
+
+.qr-pass-container {
+  width: 100%;
+  height: 100vh;                   /* fill viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.qr-pass-card {
+  width: 100%;
+  max-width: 480px;
+  height: 90vh;                     /* fit within viewport */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.15);
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-y: auto;                 /* allow scrolling if content too tall */
+  scroll-behavior: smooth;
+}
+
+.qr-pass-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.qr-pass-header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.qr-pass-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.qr-pass-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;                          /* take available space */
+}
+
+.qr-pass-event-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.qr-pass-code {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 1;                          /* expand to fill space */
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.qr-pass-code img {
+  width: 100%;
+  max-width: 100%;                  /* scale QR to fit container */
+  max-height: 60vh;                  /* prevent overflow */
+  height: auto;
+  display: block;
+}
+
+.qr-pass-info {
+  text-align: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.qr-pass-info p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.qr-pass-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 0.5rem;
+}
+
+.btn-download {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-download:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.qr-pass-loading,
+.qr-pass-error {
+  width: 100%;
+  max-width: 480px;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .qr-pass-card {
+    padding: 1rem 1rem;
+    height: 95vh;                   /* fit smaller screens */
+  }
+
+  .qr-pass-code img {
+    max-height: 50vh;               /* scale down QR on small screens */
+  }
+
+  .btn-download {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

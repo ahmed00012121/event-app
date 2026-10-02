@@ -1,0 +1,255 @@
+/* src/assets/admin/manageRegUser.css */
+
+/* Container */
+.manage-users-container {
+  padding: 1.75rem;
+  background-color: #f6f8fb;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Header */
+.manage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.12);
+}
+
+.manage-header .header-left h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.manage-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+/* Refresh button */
+.btn-refresh {
+  background: rgba(255,255,255,0.12);
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Messages */
+.message {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.message-success {
+  background-color: #e6f4ea;
+  color: #2b7a3b;
+  border-left: 4px solid #4caf50;
+}
+
+.message-error {
+  background-color: #ffe6e6;
+  color: #b71c1c;
+  border-left: 4px solid #f44336;
+}
+
+/* Table container */
+.registrations-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.04);
+  overflow: auto;
+}
+
+/* Table styling */
+.registrations-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+
+.registrations-table th {
+  background-color: #0b5ed7;
+  color: white;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-bottom: 2px solid rgba(0,0,0,0.06);
+}
+
+.registrations-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #f0f2f5;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.full-width-table thead th:first-child,
+.full-width-table tbody td:first-child { width: 60px; }
+
+/* Row status left accent */
+.status-row.status-pending { border-left: 4px solid #FFC107; }
+.status-row.status-accepted { border-left: 4px solid #4CAF50; }
+.status-row.status-rejected { border-left: 4px solid #f44336; }
+.status-row.status-attended { border-left: 4px solid #2196F3; }
+.status-row.status-cancelled { border-left: 4px solid #9e9e9e; }
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 18px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  background: #616161;
+}
+
+/* Text columns */
+.student-name { font-weight: 600; color: #222; }
+.event-title { color: #444; max-width: 350px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.reg-date { color: #666; }
+
+/* Actions cell */
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn-approve {
+  background: #0b8a3e;
+  color: white;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-reject {
+  background: #d32f2f;
+  color: white;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-cancel {
+  background: #f0ad4e;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Icon-style buttons */
+.icon-btn {
+  background: rgba(0,0,0,0.05);
+  border: none;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading & no data */
+.loading-state, .no-data {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+/* Reject modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8,10,20,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1250;
+  padding: 1rem;
+}
+
+.modal-content-custom {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(12, 24, 48, 0.22);
+}
+
+.modal-header {
+  padding: 1rem 1.25rem;
+  background: linear-gradient(90deg,#f44336,#e91e63);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body { padding: 1.25rem; }
+
+.rejection-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #f3f5f8;
+}
+
+/* Ticket card preview styles */
+.ticket-card-compact { display:flex; border-radius:10px; overflow:hidden; border:1px solid #eef6ff; background:#fff; }
+.ticket-left { flex:1; padding:12px; }
+.ticket-right { width:200px; background: linear-gradient(180deg,#111827,#374151); color:#fff; padding:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.ticket-title { font-size:16px; font-weight:800; color:#0b4da2; }
+.ticket-code { font-family: monospace; font-weight:800; }
+.ticket-qr-wrap { width:96px; height:96px; background:#fff; padding:8px; border-radius:8px; display:flex; align-items:center; justify-content:center; }
+.btn-attendance { background:#0b8a3e; color:#fff; padding:0.45rem 0.7rem; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .registrations-table { min-width: 760px; }
+}
+
+@media (max-width: 640px) {
+  .manage-header { flex-direction: column; gap: 0.6rem; align-items: flex-start; }
+  .actions-cell { gap: 0.35rem; }
+  .registrations-table { font-size: 0.9rem; }
+  .student-name, .event-title { max-width: 140px; }
+  .modal-content-custom { max-width: 92%; }
+}

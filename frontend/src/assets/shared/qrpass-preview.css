@@ -1,0 +1,67 @@
+/* QR Pass Preview Styles */
+.qr-pass-preview-container {
+  background: white;
+  border: 2px dashed #4caf50;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.qr-preview-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.qr-preview-img {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  border: 3px solid #4caf50;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.qr-preview-instructions {
+  margin-top: 1rem;
+}
+
+.qr-preview-instructions p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.qr-preview-loading {
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #666;
+  font-weight: 500;
+}
+
+.qr-preview-error {
+  background: #ffe0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #c33;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .qr-pass-preview-container {
+    padding: 1rem;
+  }
+
+  .qr-preview-img {
+    width: 220px;
+    height: 220px;
+  }
+}
